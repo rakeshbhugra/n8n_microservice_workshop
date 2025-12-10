@@ -17,3 +17,13 @@ curl -X POST http://localhost:4001/webhook \
   -H "Content-Type: application/json" \
   -d '{"aqi_level": "moderate", "warning_message": "Air quality is acceptable"}'
 ```
+
+
+How to install telebit
+https://telebit.cloud/
+curl https://get.telebit.io/ | bash
+
+confirm email
+
+~/telebit http <port>
+~/telebit http 4001

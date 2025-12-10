@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from voice_agent import make_call
 
 app = FastAPI()
 
@@ -18,6 +19,8 @@ class ResponseData(BaseModel):
 
 @app.post("/webhook", response_model=ResponseData)
 async def process_webhook(data: RequestData):
-    print(f"Received AQI Level: {data.aqi_level}")
+    # print(f"Received AQI Level: {data.aqi_level}")
+    print(data)
+    make_call("John Cena", data.aqi_level, data.warning_message)
     return ResponseData(status="success", message="Data processed successfully")
 
